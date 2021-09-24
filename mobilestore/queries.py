@@ -12,7 +12,7 @@ def list_all_mobiles():
 
 
 def price_of_mobile_with_model(model):
-    query = Mobile.objects.values_list('price','model')
+    query = Mobile.objects.get(model='model')
     return query
 
 
@@ -22,7 +22,7 @@ def most_expensive_mobile():
 
 
 def all_mobiles_with_brand_of(brand_name):
-    query = Mobile.objects.all().values('brand')
+    query = Mobile.objects.filter(brand=brand_name)
     return query
 
 
